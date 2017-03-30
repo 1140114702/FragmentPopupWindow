@@ -1,6 +1,7 @@
 package com.example.bin.fragmentpopupwindow;
 
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by bin on 2017/3/28.
@@ -37,6 +39,15 @@ public class FragmentFriends extends Fragment {
                 if (window == null) {
                     View view = LayoutInflater.from(getContext()).inflate(R.layout.window_view,null);
                     window = new PopupWindow(view, -1, -2);
+                    window.setBackgroundDrawable(new BitmapDrawable());
+
+                    view.findViewById(R.id.item_view1).setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Toast.makeText(getContext(), "关闭", Toast.LENGTH_SHORT).show();
+                            window.dismiss();
+                        }
+                    });
                 }
                 window.showAsDropDown(textView);
             }

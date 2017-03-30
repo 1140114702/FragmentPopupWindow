@@ -1,6 +1,7 @@
 package com.example.bin.fragmentpopupwindow;
 
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -37,6 +38,7 @@ public class FragmentFavorite extends Fragment {
                 if (window == null) {
                     View view = LayoutInflater.from(getContext()).inflate(R.layout.window_view,null);
                     window = new PopupWindow(view, -1, -2);
+                    window.setBackgroundDrawable(new BitmapDrawable());
                     window.setFocusable(true);
                 }
                 window.showAsDropDown(textView);
