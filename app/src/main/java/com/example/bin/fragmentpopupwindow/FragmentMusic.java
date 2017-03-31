@@ -39,6 +39,7 @@ public class FragmentMusic extends Fragment {
                     View view = LayoutInflater.from(getContext()).inflate(R.layout.window_view,null);
                     window = new PopupWindow(view, -1, -2);
                     window.setBackgroundDrawable(new BitmapDrawable());
+                    //设置此属性使得点击外部消失，但不影响其他的控件点击
                     window.setOutsideTouchable(true);
                 }
                 window.showAsDropDown(textView);

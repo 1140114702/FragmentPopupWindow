@@ -39,6 +39,7 @@ public class FragmentFavorite extends Fragment {
                     View view = LayoutInflater.from(getContext()).inflate(R.layout.window_view,null);
                     window = new PopupWindow(view, -1, -2);
                     window.setBackgroundDrawable(new BitmapDrawable());
+                    //设置上焦点，此时点击外部时也会消失 但是需要消费事件 所有外部的其他控件无法获得点击事件
                     window.setFocusable(true);
                 }
                 window.showAsDropDown(textView);
